@@ -1,11 +1,11 @@
 from cobra import io
 
 # Load model
-model = io.read_sbml_model(r"D:\22_CodeProjects\yeast-GEM\model\yeast-GEM.xml")  # adjust path as needed
+model = io.read_sbml_model(r"D:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml")  # adjust path as needed
 
 
 for rxn in model.exchanges:
-    if "biomass" in rxn.id.lower() or "biomass" in rxn.name.lower():
+    if "mva" in rxn.id.lower() or "mevalonate" in rxn.name.lower():
         print(f"{rxn.id}: {rxn.name}")
 
 
