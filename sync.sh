@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 可选：进入你的项目目录
-cd /d/22_CodeProjects/yeast-GEM_GuiY || exit D:\22_CodeProjects\yeast-GEM_GuiY
+cd /e/22_CodeProjects/yeast-GEM_GuiY || exit E:\22_CodeProjects\yeast-GEM_GuiY
 
 echo "🔄 拉取远程变更..."
 git pull --rebase

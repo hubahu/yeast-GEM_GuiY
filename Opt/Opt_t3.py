@@ -3,7 +3,7 @@ from cobra.flux_analysis import single_gene_deletion
 from itertools import combinations
 
 # 1. 载入模型
-model = io.read_sbml_model(r"D:\22_CodeProjects\yeast-GEM\model\yeast-GEM.xml")
+model = io.read_sbml_model(r"E:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml")
 
 # 2. 设置目标函数为 MVA 外排反应
 model.objective = "EX_mev__L(e)"  # 请替换为你模型中的实际ID
