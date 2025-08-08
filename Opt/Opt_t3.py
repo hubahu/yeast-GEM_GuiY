@@ -3,10 +3,11 @@ from cobra.flux_analysis import single_gene_deletion
 from itertools import combinations
 
 # 1. 载入模型
-model = io.read_sbml_model(r"E:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml")
+Model_path = r"D:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml"
+model = io.read_sbml_model(Model_path)
 
 # 2. 设置目标函数为 MVA 外排反应
-model.objective = "EX_mev__L(e)"  # 请替换为你模型中的实际ID
+model.objective = "r_1547"  # 请替换为你模型中的实际ID
 
 # 3. 添加最小生长约束（例如细胞生长至少为80%最大）
 biomass_rxn = model.reactions.get_by_id("r_2111")  # 假设是生长反应，请确认实际ID
@@ -17,7 +18,7 @@ biomass_rxn.lower_bound = min_growth
 print(f"Minimum growth rate required: {min_growth:.4f}")
 
 # 4. 查找参与 MVA 产物的所有反应（粗筛）
-mva_rxn = model.reactions.get_by_id("EX_mev__L(e)")  # 替换为实际 ID
+mva_rxn = model.reactions.get_by_id("r_1547")  # 替换为实际 ID
 precursors = mva_rxn.reactants
 
 related_rxns = set()
