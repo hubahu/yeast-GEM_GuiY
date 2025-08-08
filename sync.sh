@@ -1,21 +1,18 @@
 #!/bin/bash
 
-# 可选：进入你的项目目录
-cd /e/22_CodeProjects/yeast-GEM_GuiY || exit E:\22_CodeProjects\yeast-GEM_GuiY
+cd "/e/22_CodeProjects/yeast-GEM_GuiY" || { echo "❌ 无法进入目录"; exit 1; }
 
-echo "🔄 拉取远程变更..."
-git pull --rebase
+# 确保在 main 分支
+git checkout main
 
-echo "📦 添加更改..."
+# 先提交本地更改
 git add .
+git commit -m "自动提交: $(date '+%Y-%m-%d %H:%M:%S')" || echo "无新更改"
 
-# 生成提交信息（时间戳）
-msg="更新于 $(date '+%Y-%m-%d %H:%M:%S')"
+# 普通拉取（避免 rebase 冲突）
+git pull origin main
 
-echo "📝 提交中：$msg"
-git commit -m "$msg"
+# 推送更改
+git push origin main
 
-echo "🚀 推送到远程仓库..."
-git push
-
-echo "✅ 同步完成。"
+echo "✅ 同步完成"
