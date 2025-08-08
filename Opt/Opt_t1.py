@@ -1,7 +1,7 @@
 from cobra import io
 
 # Load model
-model = io.read_sbml_model(r"D:\22_CodeProjects\yeast-GEM\model\yeast-GEM.xml")  # adjust path as needed
+model = io.read_sbml_model(r"E:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml")  # adjust path as needed
 
 # Check biomass objective value
 solution = model.optimize()
