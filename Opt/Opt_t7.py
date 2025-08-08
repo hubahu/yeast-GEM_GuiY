@@ -12,8 +12,8 @@ import os
 # STEP 1: 加载酵母9代谢模型
 # ----------------------------
 # 模型文件路径（根据实际存放位置修改）
-#Model_path = r"D:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml"
-Model_path = r"E:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml"
+Model_path = r"D:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml"
+#Model_path = r"E:\22_CodeProjects\yeast-GEM_GuiY\model\yeast-GEM.xml"
 model = read_sbml_model(Model_path)
 print(f"模型加载成功: {len(model.genes)}个基因, {len(model.reactions)}个反应")
 
